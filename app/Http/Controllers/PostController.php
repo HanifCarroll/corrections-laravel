@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Post;
+use App\Models\Sentence;
 
 class PostController extends Controller
 {
@@ -22,7 +23,7 @@ class PostController extends Controller
      */
     public function create()
     {
-        //
+        return view('posts.create');
     }
 
     /**
@@ -30,7 +31,33 @@ class PostController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'title' => 'required|string|max:255',
+            'text' => 'required|string',
+        ]);
+
+        $post = new Post([
+            'user_id' => auth()->id(),
+            'title' => $request->get('title'),
+            'text' => $request->get('text'),
+        ]);
+
+        $post->save();
+
+        // Divide the post text into sentences
+        $sentences = preg_split('/(?<=[.!?])\s+/', $post->text, -1, PREG_SPLIT_NO_EMPTY);
+
+        // Create Sentence records for each sentence
+        foreach ($sentences as $index => $sentenceText) {
+            $sentence = new Sentence([
+                'post_id' => $post->id,
+                'sentence_number' => $index + 1,
+                'original_text' => trim($sentenceText),
+            ]);
+            $sentence->save();
+        }
+
+        return redirect()->route('posts.show', $post);
     }
 
     /**

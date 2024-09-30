@@ -14,7 +14,7 @@
                         By {{ $post->user->name }} | {{ $post->created_at->format('F j, Y, g:i a') }}
                     </p>
                     <div class="prose dark:prose-invert max-w-none">
-                        {{ $post->text }}
+                        {!! nl2br(e($post->text)) !!}
                     </div>
                     
                     @if($post->user_id === auth()->id())
