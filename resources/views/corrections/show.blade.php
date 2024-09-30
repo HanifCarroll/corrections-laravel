@@ -47,7 +47,7 @@
                             Back to Post
                         </x-primary-button>
                         @if($correction->user_id === auth()->id())
-                            <form action="{{ route('corrections.destroy', $correction) }}" method="POST" onsubmit="return confirm('Are you sure you want to delete this correction?');">
+                            <form action="{{ route('posts.corrections.destroy', [$correction->post, $correction]) }}" method="POST" onsubmit="return confirm('Are you sure you want to delete this correction?');">
                                 @csrf
                                 @method('DELETE')
                                 <button type="submit" class="inline-flex items-center px-4 py-2 border border-red-600 rounded-md font-semibold text-xs text-red-600 uppercase tracking-widest hover:bg-red-50 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2 dark:focus:ring-offset-gray-800 transition ease-in-out duration-150">

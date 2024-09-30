@@ -19,7 +19,7 @@
 
                     <div class="mt-6 flex">
                         @if($post->user_id !== auth()->id())
-                            <x-primary-button href="{{ route('corrections.create', $post) }}">
+                            <x-primary-button href="{{ route('posts.corrections.create', $post) }}">
                                 New Correction
                             </x-primary-button>
                         @endif
@@ -47,7 +47,7 @@
                                 {{ $correction->correctionSentences->count() }} 
                                 {{ Str::plural('sentence', $correction->correctionSentences->count()) }} corrected
                             </p>
-                            <a href="{{ route('corrections.show', $correction) }}" class="text-blue-500 hover:underline">
+                            <a href="{{ route('posts.corrections.show', [$post, $correction]) }}" class="text-blue-500 hover:underline">
                                 View correction details
                             </a>
                         </div>

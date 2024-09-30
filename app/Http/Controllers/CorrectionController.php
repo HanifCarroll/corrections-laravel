@@ -44,19 +44,18 @@ class CorrectionController extends Controller
             }
         }
 
-        return redirect()->route('corrections.show', $correction);
+        return redirect()->route('posts.corrections.show', [$post, $correction]);
     }
 
-    public function show(Correction $correction)
+    public function show(Post $post, Correction $correction)
     {
-        $post = $correction->post;
         return view('corrections.show', compact('correction', 'post'));
     }
 
-    public function destroy(Correction $correction)
+    public function destroy(Post $post, Correction $correction)
     {
         $correction->delete();
 
-        return redirect()->route('posts.show', $correction->post);
+        return redirect()->route('posts.show', $post);
     }
 }

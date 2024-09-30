@@ -18,10 +18,7 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-Route::resource('posts', PostController::class);
-Route::get('/posts/{post}/corrections/create', [CorrectionController::class, 'create'])->name('corrections.create');
-Route::post('/posts/{post}/corrections', [CorrectionController::class, 'store'])->name('corrections.store');
-Route::get('/corrections/{correction}', [CorrectionController::class, 'show'])->name('corrections.show');
-Route::delete('/corrections/{correction}', [CorrectionController::class, 'destroy'])->name('corrections.destroy');
+Route::resource('posts', PostController::class)->only(['create', 'store', 'index', 'show', 'destroy']);
+Route::resource('posts.corrections', CorrectionController::class)->only(['create', 'store', 'show', 'destroy']);
 
 require __DIR__.'/auth.php';
