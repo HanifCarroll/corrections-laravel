@@ -11,11 +11,11 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('sentences', function (Blueprint $table) {
+        Schema::create('post_sentences', function (Blueprint $table) {
             $table->uuid('id')->primary();
             $table->foreignUuid('post_id')->constrained()->onDelete('cascade');
             $table->integer('sentence_number');
-            $table->text('original_text');
+            $table->text('text');
             $table->timestamps();
         });
     }

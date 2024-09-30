@@ -6,14 +6,14 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Concerns\HasUuids;
 
-class Sentence extends Model
+class PostSentence extends Model
 {
     use HasFactory, HasUuids;
 
     protected $fillable = [
         'post_id',
         'sentence_number',
-        'original_text',
+        'text',
     ];
 
     public function post()

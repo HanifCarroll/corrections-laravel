@@ -14,9 +14,7 @@ return new class extends Migration
         Schema::create('corrections', function (Blueprint $table) {
             $table->uuid('id')->primary();
             $table->foreignUuid('user_id')->constrained()->onDelete('cascade');
-            $table->foreignUuid('sentence_id')->constrained()->onDelete('cascade');
-            $table->text('corrected_text');
-            $table->text('explanation')->nullable();
+            $table->foreignUuid('post_id')->constrained()->onDelete('cascade');
             $table->timestamps();
         });
     }

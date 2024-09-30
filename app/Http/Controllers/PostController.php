@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Post;
-use App\Models\Sentence;
+use App\Models\PostSentence;
 
 class PostController extends Controller
 {
@@ -47,12 +47,12 @@ class PostController extends Controller
         // Divide the post text into sentences
         $sentences = preg_split('/(?<=[.!?])\s+/', $post->text, -1, PREG_SPLIT_NO_EMPTY);
 
-        // Create Sentence records for each sentence
+        // Create PostSentence records for each sentence
         foreach ($sentences as $index => $sentenceText) {
-            $sentence = new Sentence([
+            $sentence = new PostSentence([
                 'post_id' => $post->id,
                 'sentence_number' => $index + 1,
-                'original_text' => trim($sentenceText),
+                'text' => trim($sentenceText),
             ]);
             $sentence->save();
         }
