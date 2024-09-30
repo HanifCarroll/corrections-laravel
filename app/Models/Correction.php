@@ -5,6 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Concerns\HasUuids;
+use App\Models\Post;
 
 class Correction extends Model
 {
@@ -12,9 +13,7 @@ class Correction extends Model
 
     protected $fillable = [
         'user_id',
-        'sentence_id',
-        'corrected_text',
-        'explanation',
+        'post_id',
     ];
 
     public function user()
@@ -22,8 +21,13 @@ class Correction extends Model
         return $this->belongsTo(User::class);
     }
 
-    public function sentence()
+    public function post()
     {
-        return $this->belongsTo(Sentence::class);
+        return $this->belongsTo(Post::class);
+    }
+
+    public function correctionSentences()
+    {
+        return $this->hasMany(CorrectionSentence::class);
     }
 }

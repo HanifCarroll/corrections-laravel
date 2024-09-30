@@ -5,6 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Concerns\HasUuids;
+use App\Models\PostSentence;
 
 class Post extends Model
 {
@@ -23,12 +24,12 @@ class Post extends Model
 
     public function sentences()
     {
-        return $this->hasMany(Sentence::class);
+        return $this->hasMany(PostSentence::class);
     }
 
     public function corrections()
     {
-        return $this->hasManyThrough(Correction::class, Sentence::class);
+        return $this->hasMany(Correction::class);
     }
     
 }

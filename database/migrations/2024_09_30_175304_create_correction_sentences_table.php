@@ -12,7 +12,7 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('correction_sentences', function (Blueprint $table) {
-            $table->id();
+            $table->uuid('id')->primary();
             $table->foreignUuid('correction_id')->constrained()->onDelete('cascade');
             $table->foreignUuid('post_sentence_id')->constrained()->onDelete('cascade');
             $table->text('corrected_text')->nullable();
