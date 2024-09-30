@@ -16,16 +16,13 @@
                     <div class="prose dark:prose-invert max-w-none">
                         {!! nl2br(e($post->text)) !!}
                     </div>
-                    
+
                     @if($post->user_id === auth()->id())
                         <div class="mt-6 flex space-x-4">
-                            <a href="{{ route('posts.edit', $post) }}" class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded">
-                                Edit Post
-                            </a>
                             <form action="{{ route('posts.destroy', $post) }}" method="POST" onsubmit="return confirm('Are you sure you want to delete this post?');">
                                 @csrf
                                 @method('DELETE')
-                                <button type="submit" class="bg-red-500 hover:bg-red-600 text-white font-bold py-2 px-4 rounded">
+                                <button type="submit" class="bg-red-500 hover:bg-red-600 font-bold py-2 px-4 rounded">
                                     Delete Post
                                 </button>
                             </form>
