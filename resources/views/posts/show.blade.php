@@ -17,15 +17,17 @@
                         {!! nl2br(e($post->text)) !!}
                     </div>
 
-                    <div class="mt-6 flex space-x-4">
-                        <a href="{{ route('corrections.create', $post) }}" class="bg-blue-500 hover:bg-blue-600 font-bold py-2 px-4 rounded">
-                            New Correction
-                        </a>
+                    <div class="mt-6 flex">
+                        @if($post->user_id !== auth()->id())
+                            <x-primary-button href="{{ route('corrections.create', $post) }}">
+                                New Correction
+                            </x-primary-button>
+                        @endif
                         @if($post->user_id === auth()->id())
                             <form action="{{ route('posts.destroy', $post) }}" method="POST" onsubmit="return confirm('Are you sure you want to delete this post?');">
                                 @csrf
                                 @method('DELETE')
-                                <button type="submit" class="bg-red-500 hover:bg-red-600 font-bold py-2 px-4 rounded">
+                                <button type="submit" class="inline-flex items-center px-4 py-2 border border-red-600 rounded-md font-semibold text-xs text-red-600 uppercase tracking-widest hover:bg-red-50 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2 dark:focus:ring-offset-gray-800 transition ease-in-out duration-150">
                                     Delete Post
                                 </button>
                             </form>

@@ -21,7 +21,7 @@
                         <div class="mb-6 p-4 border rounded {{ $isCorrected ? 'bg-yellow-50 dark:bg-yellow-900 border-yellow-300 dark:border-yellow-600' : 'bg-green-50 dark:bg-green-900 border-green-300 dark:border-green-600' }}">
                             <div class="mb-2">
                                 <label class="block text-sm font-medium {{ $isCorrected ? 'text-yellow-700 dark:text-yellow-300' : 'text-green-700 dark:text-green-300' }}">
-                                    {{ $isCorrected ? 'Original Sentence (Corrected)' : 'Original Sentence (No Correction Needed)' }}
+                                    {{ $isCorrected ? 'Sentence (Corrected)' : 'Sentence (No Correction Needed)' }}
                                 </label>
                                 <p>{{ $postSentence->text }}</p>
                             </div>
