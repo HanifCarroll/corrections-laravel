@@ -44,7 +44,7 @@
                                 Corrected by {{ $correction->user->name }} | {{ $correction->created_at->format('F j, Y, g:i a') }}
                             </p>
                             <p class="mb-2">
-                                {{ $correction->correctionSentences->count() }} 
+                                {{ $correction->correctionSentences->count() }}
                                 {{ Str::plural('sentence', $correction->correctionSentences->count()) }} corrected
                             </p>
                             <a href="{{ route('posts.corrections.show', [$post, $correction]) }}" class="text-blue-500 hover:underline">
