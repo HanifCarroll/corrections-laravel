@@ -1,97 +1,101 @@
 <!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+<html lang="en">
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>English Correction - Perfect Your Writing</title>
-
-    @vite(['resources/css/app.css', 'resources/js/app.js'])
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EnglishCorrect</title>
+    @vite('resources/css/app.css')
 </head>
-<body>
-<div class="min-h-screen bg-gradient-to-b from-blue-50 to-white">
-    {{-- Hero Section --}}
-    <header class="container mx-auto px-4 py-16">
-        <div class="text-center">
-            <h1 class="text-4xl font-bold text-blue-900 mb-4">
-                Perfect Your English Writing
-            </h1>
-            <p class="text-xl text-gray-600 mb-8">
-                Get detailed corrections and explanations from native speakers and language experts
-            </p>
-            <a href="{{ route('posts.create') }}"
-               class="inline-block bg-blue-600 text-white px-8 py-3 rounded-lg font-medium hover:bg-blue-700 transition-colors">
-                Start Writing Now
-            </a>
-        </div>
-    </header>
+<body class="min-h-screen bg-white text-black">
+<header class="border-b">
+    <div class="container mx-auto px-4 py-4 flex items-center justify-between">
+        <div class="text-xl font-bold">EnglishCorrect</div>
+        <nav>
+            <ul class="flex items-center space-x-4">
+                <li><button class="text-black hover:text-gray-600">Log In</button></li>
+                <li><button class="bg-black text-white px-4 py-2 rounded-md hover:bg-gray-800">Sign Up</button></li>
+            </ul>
+        </nav>
+    </div>
+</header>
 
-    {{-- Features Section --}}
-    <section class="container mx-auto px-4 py-16">
-        <h2 class="text-2xl font-bold text-center text-gray-900 mb-12">
-            How It Works
-        </h2>
-        <div class="grid md:grid-cols-3 gap-8">
-            <div class="bg-white p-6 rounded-xl shadow-sm">
-                <div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mb-4">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-blue-600" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+<main>
+    <section class="py-20 text-center">
+        <h1 class="text-4xl font-bold mb-4">Improve Your English Writing Skills</h1>
+        <p class="text-xl mb-8 max-w-2xl mx-auto">Get real-time corrections and explanations from our community of language experts.</p>
+        <button class="bg-black text-white px-6 py-3 rounded-md hover:bg-gray-800">
+            Get Started for Free
+        </button>
+    </section>
+
+    <section class="py-20 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12">Key Features</h2>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="text-center">
+                    <svg class="mx-auto h-12 w-12 mb-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/>
+                        <path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/>
                     </svg>
+                    <h3 class="text-xl font-semibold mb-2">Submit Your Text</h3>
+                    <p>Easily submit your writing for review and correction.</p>
                 </div>
-                <h3 class="text-lg font-semibold mb-2">Submit Your Text</h3>
-                <p class="text-gray-600">
-                    Share your writing and get sentence-by-sentence corrections from the community
-                </p>
-            </div>
-            <div class="bg-white p-6 rounded-xl shadow-sm">
-                <div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mb-4">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-blue-600" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
-                        <circle cx="9" cy="7" r="4"></circle>
-                        <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
-                        <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                <div class="text-center">
+                    <svg class="mx-auto h-12 w-12 mb-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
                     </svg>
+                    <h3 class="text-xl font-semibold mb-2">Receive Corrections</h3>
+                    <p>Get detailed corrections and explanations for each sentence.</p>
                 </div>
-                <h3 class="text-lg font-semibold mb-2">Receive Corrections</h3>
-                <p class="text-gray-600">
-                    Native speakers and language experts provide detailed corrections and explanations
-                </p>
-            </div>
-            <div class="bg-white p-6 rounded-xl shadow-sm">
-                <div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mb-4">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-blue-600" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
+                <div class="text-center">
+                    <svg class="mx-auto h-12 w-12 mb-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+                        <polyline points="22 4 12 14.01 9 11.01"/>
                     </svg>
+                    <h3 class="text-xl font-semibold mb-2">Learn and Improve</h3>
+                    <p>Understand your mistakes and enhance your writing skills.</p>
                 </div>
-                <h3 class="text-lg font-semibold mb-2">Improve Quickly</h3>
-                <p class="text-gray-600">
-                    Learn from your mistakes with clear explanations for each correction
-                </p>
             </div>
         </div>
     </section>
 
-    {{-- CTA Section --}}
-    <section class="bg-blue-600 text-white py-16">
-        <div class="container mx-auto px-4 text-center">
-            <h2 class="text-3xl font-bold mb-4">
-                Ready to Improve Your English?
-            </h2>
-            <p class="text-xl mb-8 opacity-90">
-                Join our community and start receiving corrections today
-            </p>
-            <a href="{{ route('posts.create') }}"
-               class="inline-block bg-white text-blue-600 px-8 py-3 rounded-lg font-medium hover:bg-gray-100 transition-colors">
-                Get Started
-            </a>
+    <section class="py-20">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12">How It Works</h2>
+            <div class="max-w-2xl mx-auto">
+                <ol class="space-y-4">
+                    <li class="flex items-center">
+                        <span class="bg-black text-white rounded-full w-8 h-8 flex items-center justify-center mr-4 flex-shrink-0">1</span>
+                        <span>Submit your text or choose from recent submissions</span>
+                    </li>
+                    <li class="flex items-center">
+                        <span class="bg-black text-white rounded-full w-8 h-8 flex items-center justify-center mr-4 flex-shrink-0">2</span>
+                        <span>Our community reviews and corrects your writing</span>
+                    </li>
+                    <li class="flex items-center">
+                        <span class="bg-black text-white rounded-full w-8 h-8 flex items-center justify-center mr-4 flex-shrink-0">3</span>
+                        <span>Receive detailed corrections and explanations</span>
+                    </li>
+                    <li class="flex items-center">
+                        <span class="bg-black text-white rounded-full w-8 h-8 flex items-center justify-center mr-4 flex-shrink-0">4</span>
+                        <span>Learn from your mistakes and improve your skills</span>
+                    </li>
+                </ol>
+            </div>
         </div>
     </section>
 
-    {{-- Footer --}}
-    <footer class="container mx-auto px-4 py-8">
-        <div class="text-center text-gray-500 text-sm">
-            © {{ date('Y') }} English Correction. All rights reserved.
-        </div>
-    </footer>
-</div>
+    <section class="py-20 bg-black text-white text-center">
+        <h2 class="text-3xl font-bold mb-4">Ready to Improve Your English?</h2>
+        <p class="text-xl mb-8 max-w-2xl mx-auto">Join our community of learners and start receiving expert corrections today.</p>
+        <button class="bg-white text-black px-6 py-3 rounded-md hover:bg-gray-100">
+            Sign Up for Free
+        </button>
+    </section>
+</main>
+
+<footer class="py-8 text-center text-sm text-gray-600">
+    <p>&copy; {{ date('Y') }} EnglishCorrect. All rights reserved.</p>
+</footer>
 </body>
 </html>
