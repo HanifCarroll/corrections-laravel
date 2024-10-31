@@ -62,11 +62,11 @@
     <section class="py-20">
         <div class="container mx-auto px-4">
             <h2 class="text-3xl font-bold text-center mb-12">How It Works</h2>
-            <div class="max-w-2xl mx-auto">
+            <div class="w-fit mx-auto">
                 <ol class="space-y-4">
                     <li class="flex items-center">
                         <span class="bg-black text-white rounded-full w-8 h-8 flex items-center justify-center mr-4 flex-shrink-0">1</span>
-                        <span>Submit your text or choose from recent submissions</span>
+                        <span>Submit your text</span>
                     </li>
                     <li class="flex items-center">
                         <span class="bg-black text-white rounded-full w-8 h-8 flex items-center justify-center mr-4 flex-shrink-0">2</span>
@@ -78,7 +78,7 @@
                     </li>
                     <li class="flex items-center">
                         <span class="bg-black text-white rounded-full w-8 h-8 flex items-center justify-center mr-4 flex-shrink-0">4</span>
-                        <span>Learn from your mistakes and improve your skills</span>
+                        <span>Learn from your mistakes and improve your English</span>
                     </li>
                 </ol>
             </div>
