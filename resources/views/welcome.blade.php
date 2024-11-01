@@ -3,13 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>EnglishCorrect</title>
+    <title>EnglishFix</title>
     @vite('resources/css/app.css')
 </head>
 <body class="min-h-screen bg-white text-black">
 <header class="border-b">
     <div class="container mx-auto px-4 py-4 flex items-center justify-between">
-        <div class="text-xl font-bold">EnglishCorrect</div>
+        <div class="text-xl font-bold">EnglishFix</div>
         <nav>
             <ul class="flex items-center space-x-4">
                 <li><button class="text-black hover:text-gray-600">Log In</button></li>
@@ -95,7 +95,7 @@
 </main>
 
 <footer class="py-8 text-center text-sm text-gray-600">
-    <p>&copy; {{ date('Y') }} EnglishCorrect. All rights reserved.</p>
+    <p>&copy; {{ date('Y') }} EnglishFix. All rights reserved.</p>
 </footer>
 </body>
 </html>
