@@ -44,34 +44,31 @@
             </div>
             <div class="border-t mx-6"></div>
             <div>
+                <div class="p-6 text-gray-900 dark:text-gray-100">
                 @forelse ($post->corrections as $correction)
-                    <div class="bg-white dark:bg-gray-700 overflow-hidden shadow-sm sm:rounded-lg mb-4">
-                        <div class="p-6 text-gray-900 dark:text-gray-100">
-                            <div class="text-sm text-gray-600 dark:text-gray-400 mb-2">
-                                <p>
-
-                                    Corrected by {{ $correction->user->name }}
-                                </p>
-                                <p>
-
-                                    {{ $correction->created_at->format('F j, Y, g:i a') }}
-                                </p>
-                            </div>
-                            <p class="mb-2">
-                                {{ $correction->correctionSentences->count() }}
-                                {{ Str::plural('sentence', $correction->correctionSentences->count()) }}
-                                corrected
+                        <div class="text-sm text-gray-600 dark:text-gray-400 mb-2">
+                            <p>
+                                Corrected by {{ $correction->user->name }}
                             </p>
-                            <a href="{{ route('posts.corrections.show', [$post, $correction]) }}"
-                               class="text-black hover:underline">
-                                View
-                            </a>
+                            <p>
+
+                                {{ $correction->created_at->format('F j, Y, g:i a') }}
+                            </p>
                         </div>
-                    </div>
+                        <p class="mb-2">
+                            {{ $correction->correctionSentences->count() }}
+                            {{ Str::plural('sentence', $correction->correctionSentences->count()) }}
+                            corrected
+                        </p>
+                        <a href="{{ route('posts.corrections.show', [$post, $correction]) }}"
+                           class="text-black hover:underline">
+                            View
+                        </a>
                 @empty
                     <p class="text-gray-600 dark:text-gray-400">No corrections have been made for this post
                         yet.</p>
                 @endforelse
+                </div>
             </div>
         </div>
         <div class="mt-4">
