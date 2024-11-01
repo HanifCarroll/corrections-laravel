@@ -12,7 +12,7 @@
             <div class="hidden sm:flex sm:items-center sm:ml-6 gap-x-4">
 
                 <!-- Primary Navigation Links -->
-                <x-nav-link :href="route('posts.index')" :active="request()->routeIs('posts.index')">
+                <x-nav-link :href="route('posts.index')">
                     {{ __('All Posts') }}
                 </x-nav-link>
                 <x-dropdown align="right" width="48">

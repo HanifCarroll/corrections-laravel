@@ -12,8 +12,8 @@
         <div class="text-xl font-bold">EnglishFix</div>
         <nav>
             <ul class="flex items-center space-x-4">
-                <li><button class="text-black hover:text-gray-600">Log In</button></li>
-                <li><button class="bg-black text-white px-4 py-2 rounded-md hover:bg-gray-800">Sign Up</button></li>
+                <li><x-nav-link :href="route('login')" class="text-black hover:text-gray-600">Log In</x-nav-link></li>
+                <li><x-nav-link :href="route('register')" class="bg-black text-white px-4 py-2 rounded-md hover:bg-gray-800">Sign Up</x-nav-link></li>
             </ul>
         </nav>
     </div>
