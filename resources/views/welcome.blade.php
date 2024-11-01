@@ -1,24 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>EnglishFix</title>
-    @vite('resources/css/app.css')
-</head>
-<body class="min-h-screen bg-white text-black">
-<header class="border-b">
-    <div class="container mx-auto px-4 py-4 flex items-center justify-between">
-        <div class="text-xl font-bold">EnglishFix</div>
-        <nav>
-            <ul class="flex items-center space-x-4">
-                <li><x-nav-link :href="route('login')" class="text-black hover:text-gray-600">Log In</x-nav-link></li>
-                <li><x-nav-link :href="route('register')" class="bg-black text-white px-4 py-2 rounded-md hover:bg-gray-800">Sign Up</x-nav-link></li>
-            </ul>
-        </nav>
-    </div>
-</header>
-
+<x-app-layout>
 <main>
     <section class="py-20 text-center">
         <h1 class="text-4xl font-bold mb-4">Improve Your English Writing Skills</h1>
@@ -97,5 +77,4 @@
 <footer class="py-8 text-center text-sm text-gray-600">
     <p>&copy; {{ date('Y') }} EnglishFix. All rights reserved.</p>
 </footer>
-</body>
-</html>
+</x-app-layout>
